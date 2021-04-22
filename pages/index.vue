@@ -16,79 +16,77 @@
       <div class="carousel-wrapper">
         <VueSlickCarousel v-bind="slickOptions" :arrows="true">
           <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Short</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
+            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
+                <div class="style_rootInner__32CX1">
+                  <div>
+                    <div class="style_title__1jQC3"><b>Short</b></div>
+                  </div>
+                  <div class="style_action__32sxL">
+                    <div class="style_root__2jAzX">
+                      <div class="button is-info is-light">
+                        Muy pronto
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
+              </nuxt-link>
+            </div>
+          </section>
           <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Short</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
+            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
+                <div class="style_rootInner__32CX1">
+                  <div>
+                    <div class="style_title__1jQC3"><b>Short</b></div>
+                  </div>
+                  <div class="style_action__32sxL">
+                    <div class="style_root__2jAzX">
+                      <div class="button is-info is-light">
+                        Muy pronto
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-         <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Short</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
+              </nuxt-link>
+            </div>
+          </section>
+          <section class="section">
+            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
+                <div class="style_rootInner__32CX1">
+                  <div>
+                    <div class="style_title__1jQC3"><b>Short</b></div>
+                  </div>
+                  <div class="style_action__32sxL">
+                    <div class="style_root__2jAzX">
+                      <div class="button is-info is-light">
+                        Muy pronto
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-         <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Short</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
+              </nuxt-link>
+            </div>
+          </section>
+          <section class="section">
+            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
+                <div class="style_rootInner__32CX1">
+                  <div>
+                    <div class="style_title__1jQC3"><b>Short</b></div>
+                  </div>
+                  <div class="style_action__32sxL">
+                    <div class="style_root__2jAzX">
+                      <div class="button is-info is-light">
+                        Muy pronto
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-          <div><h1>🎃</h1></div>
-          <div><h1>🤖</h1></div>
+              </nuxt-link>
+            </div>
+          </section>
         </VueSlickCarousel>
       </div>
       <!-- Check blog posts exist -->
@@ -210,7 +208,33 @@ export default {
         infinite: false,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       }
     };
   },
@@ -252,6 +276,14 @@ export default {
 .carousel-wrapper {
   padding: 40px;
 }
+
+.carousel-wrapper .section {
+  padding: 1rem 0.5rem;
+}
+
+.blog-main .section {
+  padding: 1rem 5.5rem;
+}
 .img-wrapper img {
   margin: auto;
   width: 200px;
@@ -282,9 +314,6 @@ export default {
     padding-bottom: 3rem
     font-family: 'Lato', sans-serif
     border-bottom: 1px solid #DADADA
-  .section
-    padding: 1rem 5.5rem
-
 
 .blog-main
   max-width: 950px

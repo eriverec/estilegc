@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-jumbotron bg-variant="info" text-variant="white" border-variant="dark">
-      <template #header>BootstrapVue</template>
+      <template #header>RAGAZZA</template>
 
       <template #lead>
         This is a simple hero unit, a simple jumbotron-style component for
