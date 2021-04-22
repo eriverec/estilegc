@@ -21,7 +21,11 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
       }
-    ]
+    ],
+    script: [{
+      src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',
+      async: true
+    }],
   },
 
   /*
@@ -62,7 +66,13 @@ export default {
     ['bootstrap-vue/nuxt', {
       icons: true,
     }],
+    '@nuxtjs/google-analytics',
   ],
+
+  googleAnalytics: {
+    id: 'UA-195306092-1'
+  },
+
 
   prismic: {
     endpoint: "https://estilegc.cdn.prismic.io/api/v2",
