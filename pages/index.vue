@@ -273,17 +273,7 @@ export default {
 </script>
 
 <style scoped>
-.carousel-wrapper {
-  padding: 40px;
-}
 
-.carousel-wrapper .section {
-  padding: 1rem 0.5rem;
-}
-
-.blog-main .section {
-  padding: 1rem 5.5rem;
-}
 .img-wrapper img {
   margin: auto;
   width: 200px;

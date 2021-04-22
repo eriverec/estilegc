@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron bg-variant="info" text-variant="white" border-variant="dark">
+    <b-jumbotron text-variant="white">
       <template #header>RAGAZZA</template>
 
       <template #lead>
@@ -19,16 +19,16 @@
 </template>
 
 <style scoped>
-.jumbotron{
+.jumbotron {
   border-radius: inherit;
+  background-image: url("~/static/portada.jpg");
+  background-position-x: center;
+  background-position-y: center;
 }
-.border{
+.border {
   border: transparent;
 }
 
 .bg-info {
-  background-image: url("~/static/portada.jpg");
-  background-position-x: center;
-  background-position-y: center;
 }
 </style>
