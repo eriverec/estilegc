@@ -1,19 +1,9 @@
 <template>
   <div>
     <b-jumbotron text-variant="white">
-      <template #header>RAGAZZA</template>
-
       <template #lead>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
+        <h1>El estilo <br/> que <br/> necesitas</h1>
       </template>
-
-      <hr class="my-4" />
-
-      <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container.
-      </p>
     </b-jumbotron>
   </div>
 </template>
@@ -24,11 +14,14 @@
   background-image: url("~/static/portada.jpg");
   background-position-x: center;
   background-position-y: center;
+  padding: 6rem 1rem;
 }
 .border {
   border: transparent;
 }
 
-.bg-info {
+.lead {
+  text-transform: uppercase;
+  text-align: left;
 }
 </style>

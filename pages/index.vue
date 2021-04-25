@@ -1,189 +1,34 @@
 <template>
   <section class="home">
     <article>
-      <div
-        class="blog-avatar"
-        :style="{ backgroundImage: 'url(' + image + ')' }"
-      ></div>
-      <!-- Template for page title -->
-      <h1 class="blog-title">
-        {{ $prismic.asText(homepageContent.headline) }}
-      </h1>
-      <!-- Template for page description -->
-      <p class="blog-description">
-        {{ $prismic.asText(homepageContent.description) }}
-      </p>
+      <Header />
+      <div>
+        <h1>ACCESORIOS</h1>
+      </div>
       <div class="carousel-wrapper">
         <VueSlickCarousel v-bind="slickOptions" :arrows="true">
-          <section class="section">
-            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-                <div class="style_rootInner__32CX1">
-                  <div>
-                    <div class="style_title__1jQC3"><b>Short</b></div>
-                  </div>
-                  <div class="style_action__32sxL">
-                    <div class="style_root__2jAzX">
-                      <div class="button is-info is-light">
-                        Muy pronto
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
-          </section>
-          <section class="section">
-            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-                <div class="style_rootInner__32CX1">
-                  <div>
-                    <div class="style_title__1jQC3"><b>Short</b></div>
-                  </div>
-                  <div class="style_action__32sxL">
-                    <div class="style_root__2jAzX">
-                      <div class="button is-info is-light">
-                        Muy pronto
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
-          </section>
-          <section class="section">
-            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-                <div class="style_rootInner__32CX1">
-                  <div>
-                    <div class="style_title__1jQC3"><b>Short</b></div>
-                  </div>
-                  <div class="style_action__32sxL">
-                    <div class="style_root__2jAzX">
-                      <div class="button is-info is-light">
-                        Muy pronto
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
-          </section>
-          <section class="section">
-            <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-              <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-                <div class="style_rootInner__32CX1">
-                  <div>
-                    <div class="style_title__1jQC3"><b>Short</b></div>
-                  </div>
-                  <div class="style_action__32sxL">
-                    <div class="style_root__2jAzX">
-                      <div class="button is-info is-light">
-                        Muy pronto
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
+          <section
+            v-for="accesorio in accesorios"
+            :key="accesorio.id"
+            v-bind:post="accesorio"
+            class=""
+          >
+            <!-- Here :post="post" passes the data to the component -->
+            <accesorio-widget :accesorio="accesorio"></accesorio-widget>
           </section>
         </VueSlickCarousel>
       </div>
+
       <!-- Check blog posts exist -->
       <div v-if="posts.length !== 0" class="blog-main">
-        <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/faldas`" class="style_root__3iCRH falda__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Faldas</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Click para entrar!
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH overol__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Top</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Short</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Jeans</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-            <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
-              <div class="style_rootInner__32CX1">
-                <div>
-                  <div class="style_title__1jQC3"><b>Cargan</b></div>
-                </div>
-                <div class="style_action__32sxL">
-                  <div class="style_root__2jAzX">
-                    <div class="button is-info is-light">
-                      Muy pronto
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </div>
+        <section
+          v-for="section in sections"
+          :key="section.id"
+          v-bind:post="section"
+          class="section"
+        >
+          <!-- Here :post="post" passes the data to the component -->
+          <section-widget :section="section"></section-widget>
         </section>
       </div>
       <!-- If no blog posts return message -->
@@ -197,23 +42,27 @@
 <script>
 // Importing blog posts widget
 import BlogWidget from "~/components/BlogWidget.vue";
+import SectionWidget from "~/components/SectionWidget.vue";
+import AccesorioWidget from "~/components/AccesorioWidget.vue";
+
+import Header from "~/components/Header.vue";
 
 export default {
   data() {
     return {
       slickOptions: {
-        dots: true,
+        dots: false,
         dotsClass: "slick-dots custom-dot-class",
         edgeFriction: 0.35,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               slidesToScroll: 3,
               infinite: true,
               dots: true
@@ -240,7 +89,11 @@ export default {
   },
   name: "Home",
   components: {
-    BlogWidget
+    BlogWidget,
+    SectionWidget,
+    AccesorioWidget,
+
+    Header
   },
   head() {
     return {
@@ -249,20 +102,33 @@ export default {
   },
   async asyncData({ $prismic, error }) {
     try {
-      // Query to get blog home content
-      const homepageContent = (await $prismic.api.getSingle("blog_home")).data;
-
+      //const homepageContent = (await $prismic.api.getSingle('blog_home')).data
+      // Query to get posts content to preview
       // Query to get posts content to preview
       const blogPosts = await $prismic.api.query(
         $prismic.predicates.at("document.type", "post"),
         { orderings: "[my.post.date desc]" }
       );
 
+      // Query to get posts content to preview
+      const SectionPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "section"),
+        { orderings: "[my.section.date desc]" }
+      );
+
+      // Query to get posts content to preview
+      const AccesorioPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "accesorio"),
+        { orderings: "[my.accesorio.date desc]" }
+      );
+
       // Returns data to be used in template
       return {
-        homepageContent,
         posts: blogPosts.results,
-        image: homepageContent.image.url
+        sections: SectionPosts.results,
+        accesorios: AccesorioPosts.results
+
+        //image: SectionPosts.image.url,
       };
     } catch (e) {
       // Returns error page
@@ -273,12 +139,20 @@ export default {
 </script>
 
 <style scoped>
-
 .img-wrapper img {
   margin: auto;
   width: 200px;
   height: 100px;
   background-image: linear-gradient(gray 100%, transparent 0);
+}
+.jumbotron {
+  border-radius: inherit;
+  background-image: url("~/static/portada.jpg");
+  background-position-x: center;
+  background-position-y: center;
+}
+.border {
+  border: transparent;
 }
 </style>
 
@@ -326,7 +200,7 @@ export default {
 
 @media (max-width: 767px)
   .home
-    padding: 0 20px
+    // padding: 0 20px
   .blog-main
     padding: 0
     font-size: 18px

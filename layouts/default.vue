@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Nav/>
-    <Header/>    
+    <Nav/>   
     <nuxt />
     <footer-prismic/>
   </div>

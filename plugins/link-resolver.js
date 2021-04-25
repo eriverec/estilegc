@@ -15,5 +15,10 @@ export default function (doc) {
     return '/blog/' + doc.uid
   }
 
+  if (doc.type === 'falda') {
+    return '/falda/' + doc.uid
+  }
+
+ 
   return '/not-found'
 }
