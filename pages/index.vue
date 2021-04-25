@@ -3,7 +3,7 @@
     <article>
       <Header />
       <div>
-        <h1>ACCESORIOS</h1>
+       <center> <h1>ACCESORIOS</h1></center>
       </div>
       <div class="carousel-wrapper">
         <VueSlickCarousel v-bind="slickOptions" :arrows="true">
@@ -162,7 +162,6 @@ export default {
 .home
   max-width: 100%
   margin: auto
-  text-align: center
   .blog-avatar
     height: 140px
     width: 140px

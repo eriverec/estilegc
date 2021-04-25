@@ -14,6 +14,7 @@
   background-image: url("~/static/portada.jpg");
   background-position-x: center;
   background-position-y: center;
+  background-attachment: fixed;
   padding: 6rem 1rem;
 }
 .border {
