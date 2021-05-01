@@ -1,12 +1,26 @@
 <template>
-  <nuxt-link :to="link">
-    <div class="blog-post">
-       <prismic-image v-if="falda.data && falda.data.image" :field="falda.data.image" sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw" />
-      
-      <h2>{{ $prismic.asText(falda.data.title) }}</h2>
-      <p class="blog-post-meta">
-        <span class="created-at">{{ formattedDate }}</span>
-      </p>
+
+  <nuxt-link :to="link" class="listing-item-container compact">
+    <div class="listing-item">
+      <prismic-image
+        v-if="falda.data && falda.data.image"
+        :field="falda.data.image"
+        sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
+      />
+
+       <h2 class="listing-badge now-open">
+        ${{ falda.data.precio }}
+      </h2>
+      <div class="listing-item-content">
+        <b-badge variant="success" v-if="(falda.data.stock) === 'Disponible'">
+          {{ falda.data.stock }}
+        </b-badge>
+        <b-badge variant="danger" v-else>
+          {{ falda.data.stock }}
+        </b-badge>
+        <h3>{{ $prismic.asText(falda.data.title) }}</h3>
+        <!-- <span class="created-at">{{ formattedDate }}</span> -->
+      </div>
       <!-- <p>{{ getFirstParagraph(falda) }}</p> -->
     </div>
   </nuxt-link>
@@ -59,8 +73,7 @@ export default {
         month: "short",
         day: "2-digit"
       }).format(new Date(this.falda.data.date)));
-  },
-
+  }
 };
 </script>
 

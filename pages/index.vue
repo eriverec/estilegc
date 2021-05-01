@@ -3,10 +3,10 @@
     <article>
       <Header />
       <div>
-       <center> <h1>ACCESORIOS</h1></center>
+        <center><h2>ACCESORIOS</h2></center>
       </div>
       <div class="carousel-wrapper">
-        <VueSlickCarousel v-bind="slickOptions" :arrows="true">
+        <VueSlickCarousel v-bind="slickOptions" :arrows="false">
           <section
             v-for="accesorio in accesorios"
             :key="accesorio.id"
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Check blog posts exist -->
-      <div v-if="posts.length !== 0" class="blog-main">
+      <div class="blog-main">
         <section
           v-for="section in sections"
           :key="section.id"
@@ -31,9 +31,21 @@
           <section-widget :section="section"></section-widget>
         </section>
       </div>
-      <!-- If no blog posts return message -->
-      <div v-else class="blog-main">
-        <p>No Posts published at this time.</p>
+
+      <div>
+        <center><h2>ROPA PLAYERA</h2></center>
+      </div>
+      <div class="carousel-wrapper">
+        <VueSlickCarousel v-bind="playeraOptions" :arrows="true">
+          <section
+            v-for="playera in playeras"
+            :key="playera.id"
+            v-bind:post="playera"
+          >
+            <!-- Here :post="post" passes the data to the component -->
+            <playera-widget :playera="playera"></playera-widget>
+          </section>
+        </VueSlickCarousel>
       </div>
     </article>
   </section>
@@ -44,6 +56,7 @@
 import BlogWidget from "~/components/BlogWidget.vue";
 import SectionWidget from "~/components/SectionWidget.vue";
 import AccesorioWidget from "~/components/AccesorioWidget.vue";
+import PlayeraWidget from "~/components/PlayeraWidget.vue";
 
 import Header from "~/components/Header.vue";
 
@@ -51,7 +64,7 @@ export default {
   data() {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
         dotsClass: "slick-dots custom-dot-class",
         edgeFriction: 0.35,
         infinite: false,
@@ -65,7 +78,7 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 3,
               infinite: true,
-              dots: true
+              dots: false
             }
           },
           {
@@ -84,6 +97,41 @@ export default {
             }
           }
         ]
+      },
+      playeraOptions: {
+        dots: false,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: false,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              initialSlide: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       }
     };
   },
@@ -92,9 +140,10 @@ export default {
     BlogWidget,
     SectionWidget,
     AccesorioWidget,
-
+    PlayeraWidget,
     Header
   },
+
   head() {
     return {
       title: "Prismic Nuxt.js Blog"
@@ -122,11 +171,17 @@ export default {
         { orderings: "[my.accesorio.date desc]" }
       );
 
+      const PlayeraPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "playera"),
+        { orderings: "[my.playera.date desc]" }
+      );
+
       // Returns data to be used in template
       return {
         posts: blogPosts.results,
         sections: SectionPosts.results,
-        accesorios: AccesorioPosts.results
+        accesorios: AccesorioPosts.results,
+        playeras: PlayeraPosts.results
 
         //image: SectionPosts.image.url,
       };
@@ -156,12 +211,13 @@ export default {
 }
 </style>
 
-<style lang="sass" scoped>
+<style lang="sass">
 
 
 .home
   max-width: 100%
   margin: auto
+  margin-top: 54px
   .blog-avatar
     height: 140px
     width: 140px
@@ -194,12 +250,14 @@ export default {
     background-position: 0 23px
 
 .blog-post
-  margin: 0
-  margin-bottom: 3rem
+  margin: 80px
+  margin-top: 7rem
 
 @media (max-width: 767px)
   .home
-    // padding: 0 20px
+  .blog-post
+    margin: 30px
+    margin-top: 7rem
   .blog-main
     padding: 0
     font-size: 18px

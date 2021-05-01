@@ -11,10 +11,11 @@
 <style scoped>
 .jumbotron {
   border-radius: inherit;
-  background-image: url("~/static/portada.jpg");
+  background-image: url("~/static/portadados.jpg");
   background-position-x: center;
   background-position-y: center;
   background-attachment: fixed;
+  background-size: cover;
   padding: 6rem 1rem;
 }
 .border {

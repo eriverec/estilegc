@@ -1,24 +1,21 @@
 <template>
   <div>
     <nuxt-link
-      :to="String($prismic.asText(accesorio.data.enlace))"
+      :to="String($prismic.asText(playera.data.enlace))"
       class="style_root__3iCRH"
     >
       <div class="style_rootInner__32CX1">
         <prismic-image
-          v-if="accesorio.data && accesorio.data.image"
-          :field="accesorio.data.image"
+          v-if="playera.data && playera.data.image"
+          :field="playera.data.image"
           sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
         />
 
         <div class="style_title__1jQC3">
-          {{ $prismic.asText(accesorio.data.title) }}
+          {{ $prismic.asText(playera.data.title) }}
         </div>
-     
       </div>
     </nuxt-link>
-
-
   </div>
 </template>
 
@@ -26,19 +23,19 @@
 import LinkResolver from "~/plugins/link-resolver.js";
 
 export default {
-  props: ["accesorio"],
+  props: ["playera"],
   data: function() {
     return {
       link: "",
       formattedDate: ""
     };
   },
-  name: "accesorio-widget",
+  name: "playera-widget",
   methods: {
     // Function to get the first paragraph of text in a blog post and limit the displayed text at 300 characters
-    getFirstParagraph(accesorio) {
+    getFirstParagraph(playera) {
       const textLimit = 300;
-      const slices = accesorio.data.body;
+      const slices = playera.data.body;
       let firstParagraph = "";
       let haveFirstParagraph = false;
 
@@ -63,12 +60,12 @@ export default {
     }
   },
   created() {
-    (this.link = LinkResolver(this.accesorio)),
+    (this.link = LinkResolver(this.playera)),
       (this.formattedDate = Intl.DateTimeFormat("en-US", {
         year: "numeric",
         month: "short",
         day: "2-digit"
-      }).format(new Date(this.accesorio.data.date)));
+      }).format(new Date(this.playera.data.date)));
   }
 };
 </script>

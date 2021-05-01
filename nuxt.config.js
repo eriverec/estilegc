@@ -20,13 +20,19 @@ export default {
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
-      }
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      },
     ],
     script: [{
       src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',
       async: true
     }],
   },
+
+
 
   /*
    ** Customize the progress-bar color
