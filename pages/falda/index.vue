@@ -1,5 +1,5 @@
 <template>
-  <client-only placeholder="Loading...">
+  
     <section>
       <div class="outer-container animate__animated animate__fadeIn ">
         <div class="back">
@@ -27,7 +27,7 @@
         </article>
       </div>
     </section>
-  </client-only>
+ 
 </template>
 
 <script>

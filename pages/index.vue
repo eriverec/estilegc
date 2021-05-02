@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+
     <section class="home">
       <article>
         <Header />
@@ -51,7 +51,7 @@
         </div>
       </article>
     </section>
-  </client-only>
+ 
 </template>
 
 <script>
