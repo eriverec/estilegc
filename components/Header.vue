@@ -1,8 +1,16 @@
 <template>
-  <div>
-    <b-jumbotron text-variant="white">
-      <template #lead>
-        <h1>El estilo <br/> que <br/> necesitas</h1>
+  <div class="animate__animated animate__fadeIn">
+    <b-jumbotron>
+      <template #lead >
+        <div id="container ">
+          Tenemos
+          <div id="flip">
+            <div class=""><div>Blusas</div></div>
+            <div><div>Top</div></div>
+            <div><div>Jeans</div></div>
+          </div>
+          y mas!
+        </div>
       </template>
     </b-jumbotron>
   </div>
@@ -11,12 +19,12 @@
 <style scoped>
 .jumbotron {
   border-radius: inherit;
-  background-image: url("~/static/portadados.jpg");
+  background-image: url("~/static/jakob-owens-830Ck0a1vSI-unsplash.jpg");
   background-position-x: center;
   background-position-y: center;
   background-attachment: fixed;
   background-size: cover;
-  padding: 6rem 1rem;
+  padding: 9rem 1rem;
 }
 .border {
   border: transparent;
@@ -24,6 +32,8 @@
 
 .lead {
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: bold;
 }
 </style>

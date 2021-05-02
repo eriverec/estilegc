@@ -1,30 +1,33 @@
 <template>
-  <section>
-    <div class="outer-container">
-      <div class="back">
-        <nuxt-link to="/">back to list</nuxt-link>
+  <client-only placeholder="Loading...">
+    <section>
+      <div class="outer-container animate__animated animate__fadeIn ">
+        <div class="back">
+          <nuxt-link to="/">back to list</nuxt-link>
+        </div>
+        <!-- this component will only be rendered on client-side -->
+
+        <article>
+          <!-- Template for blog posts -->
+          <section>
+            <b-row class="imagen__section">
+              <b-col
+                v-for="falda in faldas"
+                :key="falda.id"
+                v-bind:post="falda"
+                cols="12"
+                md="6"
+                lg="4"
+                sm="12"
+              >
+                <falda-widget :falda="falda"></falda-widget>
+              </b-col>
+            </b-row>
+          </section>
+        </article>
       </div>
-      <article>
-        <!-- Template for blog posts -->
-        <section>
-          <b-row class="imagen__section">
-            <b-col
-            
-              v-for="falda in faldas"
-              :key="falda.id"
-              v-bind:post="falda"
-              cols="12"
-              md="6"
-              lg="4"
-              sm="12"
-            >
-              <falda-widget :falda="falda"></falda-widget>
-            </b-col>
-          </b-row>
-        </section>
-      </article>
-    </div>
-  </section>
+    </section>
+  </client-only>
 </template>
 
 <script>

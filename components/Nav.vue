@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light"  fixed="top">
+    <b-navbar toggleable="lg" type="light"  fixed="top" class="animate__animated animate__fadeInDown">
       <b-navbar-brand  to="/">
         <img
           src="@/static/ragazza.png"

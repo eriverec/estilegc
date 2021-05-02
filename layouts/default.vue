@@ -11,8 +11,6 @@ import FooterPrismic from '~/components/FooterPrismic.vue'
 import Nav from '~/components/Nav.vue'
 import Header from '~/components/Header.vue'
 
-
-
 export default {
   components: {
     FooterPrismic, Nav, Header

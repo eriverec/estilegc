@@ -85,7 +85,7 @@
 
 .style_title__1jQC3 {
   /*font-family: var(--font-headline);*/
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   font-size: calc(19.4px + 2.55vw);
   margin-bottom: 20px;
   line-height: 1.1;
@@ -113,8 +113,6 @@
 }
 
 /*SECCIONES - FIN*/
-
-
 
 /*TERCEROS*/
 
@@ -290,39 +288,44 @@ span.like-icon {
   letter-spacing: 1px;
 }
 
+.listing-content {
+  font-size: 20px;
+  display: inline-block;
+  color: hsla(0, 0%, 100%, 0.7);
+  letter-spacing: 1px;
+}
 
 .outer-container img {
   width: 400px;
   display: block;
-    margin: auto;
+  margin: auto;
 }
 
-.outer-container  .imagen__section img{
+.outer-container .imagen__section img {
   width: 100%;
 }
 
-
-.navbar{
+.navbar {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
-  background-color: hsla(0,0%,100%,.8);
-    -webkit-backdrop-filter: saturate(180%) blur(5px);
-    backdrop-filter: saturate(180%) blur(5px);
+  background-color: hsla(0, 0%, 100%, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(5px);
 }
 
-.navbar-brand{
+.navbar-brand {
   padding-top: initial;
 }
 
-.navbar-nav .nav-link{
+.navbar-nav .nav-link {
   padding: 0rem 1rem;
 }
 
-.slick-dots{
+.slick-dots {
   margin-top: -15px !important;
   position: initial !important;
 }
 
-.slick-dots li button:before{
+.slick-dots li button:before {
   font-size: 10px !important;
 }
 

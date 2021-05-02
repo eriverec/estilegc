@@ -15,6 +15,14 @@
       <p class="blog-post-meta text-danger">
         $ <span class="created-at ">{{ document.precio }}</span>
       </p>
+      <div class="listing-content">
+        <b-badge variant="success" v-if="(document.stock) === 'Disponible'">
+          {{ document.stock }}
+        </b-badge>
+        <b-badge variant="danger" v-else>
+          {{ document.stock }}
+        </b-badge>
+      </div>
     </div>
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices" />

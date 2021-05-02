@@ -25,6 +25,10 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Questrial&display=swap"
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
+      },
     ],
     script: [{
       src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',

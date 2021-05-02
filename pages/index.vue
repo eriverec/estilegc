@@ -1,54 +1,57 @@
 <template>
-  <section class="home">
-    <article>
-      <Header />
-      <div>
-        <center><h2>ACCESORIOS</h2></center>
-      </div>
-      <div class="carousel-wrapper">
-        <VueSlickCarousel v-bind="slickOptions" :arrows="false">
+  <client-only>
+    <section class="home">
+      <article>
+        <Header />
+
+        <div>
+          <center><h2>ACCESORIOS</h2></center>
+        </div>
+        <div class="carousel-wrapper">
+          <VueSlickCarousel v-bind="slickOptions" :arrows="false">
+            <section
+              v-for="accesorio in accesorios"
+              :key="accesorio.id"
+              v-bind:post="accesorio"
+              class=""
+            >
+              <!-- Here :post="post" passes the data to the component -->
+              <accesorio-widget :accesorio="accesorio"></accesorio-widget>
+            </section>
+          </VueSlickCarousel>
+        </div>
+
+        <!-- Check blog posts exist -->
+        <div class="blog-main">
           <section
-            v-for="accesorio in accesorios"
-            :key="accesorio.id"
-            v-bind:post="accesorio"
-            class=""
+            v-for="section in sections"
+            :key="section.id"
+            v-bind:post="section"
+            class="section"
           >
             <!-- Here :post="post" passes the data to the component -->
-            <accesorio-widget :accesorio="accesorio"></accesorio-widget>
+            <section-widget :section="section"></section-widget>
           </section>
-        </VueSlickCarousel>
-      </div>
+        </div>
 
-      <!-- Check blog posts exist -->
-      <div class="blog-main">
-        <section
-          v-for="section in sections"
-          :key="section.id"
-          v-bind:post="section"
-          class="section"
-        >
-          <!-- Here :post="post" passes the data to the component -->
-          <section-widget :section="section"></section-widget>
-        </section>
-      </div>
-
-      <div>
-        <center><h2>ROPA PLAYERA</h2></center>
-      </div>
-      <div class="carousel-wrapper">
-        <VueSlickCarousel v-bind="playeraOptions" :arrows="true">
-          <section
-            v-for="playera in playeras"
-            :key="playera.id"
-            v-bind:post="playera"
-          >
-            <!-- Here :post="post" passes the data to the component -->
-            <playera-widget :playera="playera"></playera-widget>
-          </section>
-        </VueSlickCarousel>
-      </div>
-    </article>
-  </section>
+        <div>
+          <center><h2>ROPA PLAYERA</h2></center>
+        </div>
+        <div class="carousel-wrapper">
+          <VueSlickCarousel v-bind="playeraOptions" :arrows="true">
+            <section
+              v-for="playera in playeras"
+              :key="playera.id"
+              v-bind:post="playera"
+            >
+              <!-- Here :post="post" passes the data to the component -->
+              <playera-widget :playera="playera"></playera-widget>
+            </section>
+          </VueSlickCarousel>
+        </div>
+      </article>
+    </section>
+  </client-only>
 </template>
 
 <script>
@@ -57,7 +60,6 @@ import BlogWidget from "~/components/BlogWidget.vue";
 import SectionWidget from "~/components/SectionWidget.vue";
 import AccesorioWidget from "~/components/AccesorioWidget.vue";
 import PlayeraWidget from "~/components/PlayeraWidget.vue";
-
 import Header from "~/components/Header.vue";
 
 export default {
@@ -217,7 +219,6 @@ export default {
 .home
   max-width: 100%
   margin: auto
-  margin-top: 54px
   .blog-avatar
     height: 140px
     width: 140px
