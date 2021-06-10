@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="outer-container">
+    <div class="outer-container main">
       <div class="back">
         <nuxt-link to="./">back to list</nuxt-link>
       </div>
@@ -26,6 +26,17 @@
     </div>
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices" />
+      <!-- <a class="flotante" href='https://payp.page.link/HYK2' ><img src="~/static/logo-PP.png" alt=""></a> -->
+
+      <div class="outer-container pago">
+        <h2>Forma de pago:</h2>´
+         <h3>- PayPhone</h3>
+        <a class="" href='https://payp.page.link/HYK2' ><img src="~/static/descarga.png" alt="pay" width="180"></a>
+         <h3>- Efectivo</h3>
+         <img src="~/static/dinero.png" alt="efectivo" width="80">
+          <h3>- Tranferencias</h3>
+           <img src="~/static/money-transfer.png" alt="efectivo" width="80">
+      </div>
   </div>
 </template>
 
