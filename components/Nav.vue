@@ -1,42 +1,37 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light"  fixed="top" class="animate__animated animate__fadeInDown">
-      <b-navbar-brand  to="/">
+    <b-navbar
+      toggleable="lg"
+      type="light"
+      fixed="top"
+      class="animate__animated animate__fadeInDown"
+    >
+      <b-navbar-brand to="/">
         <img
-          src="@/static/ragazza.png"
+          src="@/static/ragazzanew.png"
           class="d-inline-block align-middle logo__gc"
           alt="Kitten"
         />
       </b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
+      <b-navbar-nav to="/">
+        <SearchForm />
+      </b-navbar-nav>
 
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-        </b-navbar-nav>
-
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-       
-
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
+      <b-navbar-nav>
+        <b-nav-item href="#">Menu</b-nav-item>
+      </b-navbar-nav>
     </b-navbar>
   </div>
 </template>
+
+<script>
+import SearchForm from "~/components/SearchForm";
+export default {
+  name: "Navbar",
+  components: {
+    SearchForm
+  }
+};
+</script>

@@ -309,14 +309,16 @@ span.like-icon {
 }
 
 .navbar {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
   background-color: hsla(0, 0%, 100%, 0.8);
   -webkit-backdrop-filter: saturate(180%) blur(5px);
-  backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(5px); 
+  /* filter: invert(); */
 }
 
 .navbar-brand {
   padding-top: initial;
+  /* margin: auto; */
 }
 
 .navbar-nav .nav-link {
@@ -345,6 +347,13 @@ span.like-icon {
   display: initial;
   margin-bottom: 25px;
 }
+
+@media (min-width: 992px){
+  .navbar-expand-lg{
+    justify-content: space-between !important;
+  }
+}
+
 
 @media (max-width: 600px) {
   .outer-container.main img {

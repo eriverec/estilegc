@@ -41,7 +41,7 @@ export default {
   },
   head() {
     return {
-      title: "Prismic Nuxt.js Blog"
+      title: "Ragazza Stile - Falda"
     };
   },
   async asyncData({ $prismic, error }) {

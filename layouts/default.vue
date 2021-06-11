@@ -21,7 +21,7 @@ export default {
   },
   head() {
     return {
-      title: "Prismic Nuxt.js Blog"
+      title: "Ragazza Stile"
     };
   }
 };

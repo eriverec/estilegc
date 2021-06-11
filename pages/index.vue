@@ -4,7 +4,7 @@
       <article>
         <Header />
 
-        <div>
+        <!-- <div>
           <center><h2>ACCESORIOS</h2></center>
         </div>
         <div class="carousel-wrapper">
@@ -15,11 +15,10 @@
               v-bind:post="accesorio"
               class=""
             >
-              <!-- Here :post="post" passes the data to the component -->
               <accesorio-widget :accesorio="accesorio"></accesorio-widget>
             </section>
           </VueSlickCarousel>
-        </div>
+        </div> -->
 
         <!-- Check blog posts exist -->
         <div class="blog-main">
@@ -34,7 +33,7 @@
           </section>
         </div>
 
-        <div>
+        <!-- <div>
           <center><h2>ROPA PLAYERA</h2></center>
         </div>
         <div class="carousel-wrapper">
@@ -44,11 +43,18 @@
               :key="playera.id"
               v-bind:post="playera"
             >
-              <!-- Here :post="post" passes the data to the component -->
               <playera-widget :playera="playera"></playera-widget>
             </section>
           </VueSlickCarousel>
-        </div>
+        </div> -->
+
+
+
+
+
+
+
+        
       </article>
     </section>
  
@@ -148,7 +154,7 @@ export default {
 
   head() {
     return {
-      title: "Prismic Nuxt.js Blog"
+      title: "Ragazza Stile"
     };
   },
   async asyncData({ $prismic, error }) {

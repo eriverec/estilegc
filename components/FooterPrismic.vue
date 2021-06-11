@@ -1,6 +1,7 @@
 <template>
   <footer class="footer">
-      <strong><p>© 2021. All rights reserved. Developed by Eri Vera.</p> </strong> 
+    
+      <strong><p>© 2021. All rights reserved. <br> Developed by Eri Vera.</p> </strong> 
     <a href="https://prismic.io" target="_blank" rel="noopener">
       <!-- <img class="logo" src="../assets/img/prismic-logo.svg" alt="Prismic"> -->
     </a>
@@ -8,8 +9,13 @@
 </template>
 
 <script>
+
+import SearchForm from '~/components/SearchForm'
 export default {
-  name: 'FooterPrismic'
+  name: 'FooterPrismic',
+  components: {
+    SearchForm
+  }
 }
 </script>
 
