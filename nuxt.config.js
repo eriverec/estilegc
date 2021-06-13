@@ -5,14 +5,16 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Ragazza Stile",
+    title: 'Home',
+    titleTemplate: 'Ragazza Stile | %s',
+
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Ragazza Stile"
+        content: "Has tus compras aquí"
       }
     ],
     link: [
@@ -63,6 +65,9 @@ export default {
   plugins: [
     { src: "~/plugins/prismicLinks", ssr: false },
     { src: "~/plugins/vue-slick-carousel" },
+    { src: "~/plugins/vue-backtotop", ssr: false },
+
+
 
 
   ],
@@ -90,6 +95,9 @@ export default {
     htmlSerializer: "@/plugins/html-serializer",
     preview: false
   },
+
+
+  components: true,
 
   /*
    ** Build configuration

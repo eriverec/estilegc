@@ -1,16 +1,14 @@
 <template>
   <div>
-    <div class="outer-container main">
-      <div class="back">
-        <nuxt-link to="./">back to list</nuxt-link>
-      </div>
+    <div class="outer-container main animate__animated animate__fadeIn">
+     <Back/>
       <prismic-image
         v-if="document && document.image"
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
       />
       <!-- Template for page title -->
-      <h1 class="blog-title">{{ $prismic.asText(document.title) }}</h1>
+      <h2 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h2>
       <!-- Template for published date -->
       <p class="blog-post-meta text-danger">
         $ <span class="created-at ">{{ document.precio }}</span>
@@ -33,9 +31,8 @@
          <h3>- PayPhone</h3>
         <a class="" href='https://payp.page.link/HYK2' ><img src="~/static/descarga.png" alt="pay" width="180"></a>
          <h3>- Efectivo</h3>
-         <img src="~/static/dinero.png" alt="efectivo" width="80">
+        
           <h3>- Tranferencias</h3>
-           <img src="~/static/money-transfer.png" alt="efectivo" width="80">
       </div>
   </div>
 </template>
@@ -43,16 +40,23 @@
 <script>
 //Importing all the slices components
 import SlicesBlock from "~/components/SlicesBlock.vue";
+import Back from "~/components/Back.vue";
+
 
 export default {
   name: "falda",
   components: {
-    SlicesBlock
+    SlicesBlock, Back
   },
-
-  head() {
+  
+  data() {
+    return{
+      title:"Artículo"
+    }
+  },
+ head() {
     return {
-      title: "Prismic Nuxt.js Blog"
+      title: this.title
     };
   },
   async asyncData({ $prismic, params, error }) {

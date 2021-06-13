@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     
-      <strong><p>© 2021. All rights reserved. <br> Developed by Eri Vera.</p> </strong> 
+     <p>© 2021. All rights reserved. <br> Developed by  Eri Vera</p>
     <a href="https://prismic.io" target="_blank" rel="noopener">
       <!-- <img class="logo" src="../assets/img/prismic-logo.svg" alt="Prismic"> -->
     </a>
@@ -24,9 +24,8 @@ export default {
   padding: 40px 0
   max-width: 700px
   margin: 0 auto
+  font-size: 17px;
   text-align: center
   border-top: 1px solid #DADADA
 
-.logo
-  width: 100px
 </style>

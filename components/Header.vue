@@ -2,6 +2,7 @@
   <div class="animate__animated animate__fadeIn">
     <b-jumbotron>
       <template #lead >
+          
         <div id="container ">
           Tenemos
           <div id="flip">

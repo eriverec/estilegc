@@ -1,10 +1,9 @@
 <template>
+  <section class="home">
+    <article>
+      <Header />
 
-    <section class="home">
-      <article>
-        <Header />
-
-        <!-- <div>
+      <!-- <div>
           <center><h2>ACCESORIOS</h2></center>
         </div>
         <div class="carousel-wrapper">
@@ -20,20 +19,39 @@
           </VueSlickCarousel>
         </div> -->
 
-        <!-- Check blog posts exist -->
-        <div class="blog-main">
-          <section
-            v-for="section in sections"
-            :key="section.id"
-            v-bind:post="section"
-            class="section"
-          >
-            <!-- Here :post="post" passes the data to the component -->
-            <section-widget :section="section"></section-widget>
-          </section>
-        </div>
+      <!-- Check blog posts exist -->
+      <div class="blog-main">
+        <section
+          v-for="section in sections"
+          :key="section.id"
+          v-bind:post="section"
+          class="section"
+        >
+          <!-- Here :post="post" passes the data to the component -->
+          <section-widget :section="section"></section-widget>
+        </section>
 
-        <!-- <div>
+        <section class="section">
+          <div class="text-center hero-body">
+            <div class="">
+              <h2 class="title is-4">Entrega a domicilio</h2>
+              <div class="">
+                <div>
+                  Solo para Guayaquil
+                </div>
+                <img
+                  class="mt-3"
+                  src="/fast-delivery.png"
+                  alt="Logo Footer"
+                  width="75"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- <div>
           <center><h2>ROPA PLAYERA</h2></center>
         </div>
         <div class="carousel-wrapper">
@@ -47,17 +65,10 @@
             </section>
           </VueSlickCarousel>
         </div> -->
+    </article>
 
-
-
-
-
-
-
-        
-      </article>
-    </section>
- 
+  
+  </section>
 </template>
 
 <script>
@@ -69,8 +80,15 @@ import PlayeraWidget from "~/components/PlayeraWidget.vue";
 import Header from "~/components/Header.vue";
 
 export default {
+  head() {
+    return {
+      title: this.title
+    };
+  },
+
   data() {
     return {
+      title: "Home",
       slickOptions: {
         dots: true,
         dotsClass: "slick-dots custom-dot-class",
@@ -152,11 +170,6 @@ export default {
     Header
   },
 
-  head() {
-    return {
-      title: "Ragazza Stile"
-    };
-  },
   async asyncData({ $prismic, error }) {
     try {
       //const homepageContent = (await $prismic.api.getSingle('blog_home')).data
@@ -225,6 +238,7 @@ export default {
 .home
   max-width: 100%
   margin: auto
+
   .blog-avatar
     height: 140px
     width: 140px

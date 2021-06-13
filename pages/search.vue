@@ -1,9 +1,7 @@
 <template>
   <section>
     <div class="outer-container animate__animated animate__fadeIn ">
-      <div class="back">
-        <nuxt-link to="/">back to list</nuxt-link>
-      </div>
+      <Back/>
       <div class="mb-3">
         <strong>Resultados para:</strong>
         {{ searchterm }}
@@ -57,9 +55,15 @@ export default {
     GridPost,
     SearchForm
   },
+  head(){
+    return{
+      title: this.title
+    }
+  },
 
    data() {
     return {
+      title:"Búsqueda",
       currentpage: 1, //original
       nonewposts: false
     }

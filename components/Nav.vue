@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="nav-custom">
     <b-navbar
       toggleable="lg"
       type="light"
@@ -15,12 +15,12 @@
       </b-navbar-brand>
 
       <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
-      <b-navbar-nav to="/">
-        <SearchForm />
-      </b-navbar-nav>
+      <b-navbar-nav to="/"> </b-navbar-nav>
 
       <b-navbar-nav>
-        <b-nav-item href="#">Menu</b-nav-item>
+        <b-nav-item href="#" v-b-toggle.sidebar-right class="h6">
+          <b-icon-search></b-icon-search>
+        </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -28,10 +28,13 @@
 
 <script>
 import SearchForm from "~/components/SearchForm";
+import Sidebar from "~/components/Sidebar";
+
 export default {
   name: "Navbar",
   components: {
-    SearchForm
+    SearchForm,
+    Sidebar
   }
 };
 </script>

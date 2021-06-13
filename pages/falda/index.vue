@@ -1,47 +1,39 @@
 <template>
-  
-    <section>
-      <div class="outer-container animate__animated animate__fadeIn ">
-        <div class="back">
-          <nuxt-link to="/">back to list</nuxt-link>
-        </div>
-        <!-- this component will only be rendered on client-side -->
-
-        <article>
-          <!-- Template for blog posts -->
-          <section>
-            <b-row class="imagen__section">
-              <b-col
-                v-for="falda in faldas"
-                :key="falda.id"
-                v-bind:post="falda"
-                cols="12"
-                md="6"
-                lg="4"
-                sm="12"
-              >
-                <falda-widget :falda="falda"></falda-widget>
-              </b-col>
-            </b-row>
-          </section>
-        </article>
-      </div>
-    </section>
- 
+  <section>
+    <div class="outer-container animate__animated animate__fadeIn ">
+      <Back />
+      <article>
+        <section>
+          <b-row class="imagen__section">
+            <b-col
+              v-for="falda in faldas"
+              :key="falda.id"
+              v-bind:post="falda"
+              cols="12"
+              md="6"
+              lg="4"
+              sm="12"
+            >
+              <falda-widget :falda="falda"></falda-widget>
+            </b-col>
+          </b-row>
+        </section>
+      </article>
+    </div>
+  </section>
 </template>
 
 <script>
-// Importing blog posts widget
-import FaldaWidget from "~/components/FaldaWidget.vue";
-
 export default {
-  name: "Home",
-  components: {
-    FaldaWidget
+  data() {
+    return {
+      title: "Falda"
+    };
   },
+
   head() {
     return {
-      title: "Ragazza Stile - Falda"
+      title: this.title
     };
   },
   async asyncData({ $prismic, error }) {
