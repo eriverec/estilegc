@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     
-     <p>© 2021. All rights reserved. <br> Developed by  Eri Vera</p>
+     <p>© 2021. Todos los derechos reservados. <br> Desarrollado por Eri Vera</p>
     <a href="https://prismic.io" target="_blank" rel="noopener">
       <!-- <img class="logo" src="../assets/img/prismic-logo.svg" alt="Prismic"> -->
     </a>
