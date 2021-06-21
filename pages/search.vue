@@ -37,7 +37,7 @@
             v-else
             variant="outline-primary"
           >
-            ¡Llegaste al fondo!
+            ¡No hay más productos!
           </div>
         </div>
       </article>
