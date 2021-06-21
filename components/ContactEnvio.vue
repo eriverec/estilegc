@@ -13,6 +13,7 @@
     </b-button>
 
     <b-modal
+    centered 
       hide-footer
       id="modal-1"
       title="Contáctanos"
@@ -26,6 +27,7 @@
     </b-modal>
 
     <b-modal
+    centered 
       hide-footer
       id="envio"
       title="Envío"

@@ -5,6 +5,7 @@
     </b-button>
 
     <b-modal
+    centered 
       hide-footer
       id="pago"
       title="Forma de Pago"
