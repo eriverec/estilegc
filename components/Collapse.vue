@@ -89,7 +89,7 @@
 }
 
 .card-body a:hover {
-  color: #007bff;
+  color: #e894a8;
   text-decoration: none;
   font-weight: 600;
 }

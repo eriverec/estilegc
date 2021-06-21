@@ -16,7 +16,7 @@
 
 <style scoped>
 .btn-box {
-  box-shadow: 3px 2px 4px 0px rgb(0 0 0 / 45%), 0 2px 32px 0 rgb(0 0 0 / 16%);
+  box-shadow: 3px 2px 7px 0px rgb(0 0 0 / 45%), 0 2px 32px 0 rgb(0 0 0 / 16%);
 }
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .btn-dark:not(:disabled):not(.disabled).active:focus,

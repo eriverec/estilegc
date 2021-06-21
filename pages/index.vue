@@ -31,7 +31,7 @@
           <section-widget :section="section"></section-widget>
         </section>
 
-        <section class="section">
+        <!-- <section class="section">
           <div class="text-center hero-body">
             <div class="">
               <h2 class="title is-4">Entrega a domicilio</h2>
@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
       </div>
 
       <!-- <div>

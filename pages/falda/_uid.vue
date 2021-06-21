@@ -27,13 +27,9 @@
       <!-- <a class="flotante" href='https://payp.page.link/HYK2' ><img src="~/static/logo-PP.png" alt=""></a> -->
 
       <div class="outer-container pago">
-        <h2>Forma de pago:</h2>´
-         <h3>- PayPhone</h3>
-        <a class="" href='https://payp.page.link/HYK2' ><img src="~/static/descarga.png" alt="pay" width="180"></a>
-         <h3>- Efectivo</h3>
-        
-          <h3>- Tranferencias</h3>
+      <FormaPago/>
       </div>
+
   </div>
 </template>
 
