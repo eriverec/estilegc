@@ -33,6 +33,7 @@
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  filter: contrast(0.6);
 }
 
 .blog-main .style_root__3iCRH {
@@ -78,10 +79,7 @@
   font-weight: 800;
 }
 
-.blog-main .style_title__1jQC3 {
-  margin-top: -165px;
-  font-weight: 800;
-}
+
 
 .style_title__1jQC3 {
   /*font-family: var(--font-headline);*/
@@ -89,6 +87,10 @@
   font-size: calc(19.4px + 2.55vw);
   margin-bottom: 20px;
   line-height: 1.1;
+  margin-top: -165px;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .style_root__3iCRH.falda__imagen,

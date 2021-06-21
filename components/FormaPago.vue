@@ -20,7 +20,7 @@
         Su producto será entregado cuando la transferencia se haga en efectivo, máximo
         de 72 horas. Escribenos para más información al
         <a
-          href="https://api.whatsapp.com/send?phone=978775201&text=Hola" target="_blank"
+          href="https://wa.link/3lba4v" target="_blank"
           class="btn btn-light mb-2"
         >
           <img src="~/static/whatsapp.png" alt="" width="25" /> +593 978 775 201 </a

@@ -1,11 +1,9 @@
 <template>
   <div class="outer-container">
-    <div class="back">
-      <nuxt-link to="/">back to list</nuxt-link>
-    </div>
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
+   <Back/>
+    <h1 v-if="error.statusCode === 404">Página no encontrada</h1>
     <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/" style="text-decoration: underline;">Return to home</nuxt-link>
+    <nuxt-link to="/" style="text-decoration: underline;">ir al home</nuxt-link>
   </div>
 </template>
 
@@ -14,7 +12,7 @@ export default {
   props: ['error'],
   head () {
     return {
-      title: 'Prismic Nuxt.js Blog',
+      title: 'Página no encontrada',
     }
   },
 }

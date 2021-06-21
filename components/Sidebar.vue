@@ -4,7 +4,7 @@
       <template #footer>
         <div class=" text-dark align-items-center px-3 py-2">
           <a
-            href="https://api.whatsapp.com/send?phone=978775201&text=Quiero%20este%20producto"
+            href="https://wa.link/3lba4v"
             class="btn btn-light mb-2"
           >
             <img src="~/static/whatsapp.png" alt="" width="25" /> +593 978 775
