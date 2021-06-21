@@ -344,6 +344,10 @@ span.like-icon {
   margin-bottom: 0px;
 }
 
+.modal-content{
+  border: none;
+}
+
 .hero-body {
   padding: 20px;
   background: linear-gradient(
