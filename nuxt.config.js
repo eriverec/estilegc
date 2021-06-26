@@ -82,6 +82,7 @@ export default {
       icons: true,
     }],
     '@nuxtjs/google-analytics',
+    'vue-social-sharing/nuxt',
   ],
 
   googleAnalytics: {

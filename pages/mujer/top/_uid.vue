@@ -10,7 +10,7 @@
       <!-- Template for page title -->
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h3>
 
-      <b-row class="w-340 ">
+      <b-row class="w-340 m-auto">
         <b-col
           ><p class="blog-post-meta text-dark">
             $ <span class="created-at ">{{ document.precio }}</span>
@@ -57,17 +57,6 @@
 .outer-container.main .img-ws {
   width: 25px !important;
 }
-.w-340{
-  width: 340px;
-}
-
-@media (max-width: 600px) {
-  .w-340 {
-    margin: auto;
-    text-align: center;
-  }
-}
-
 </style>
 
 <script>

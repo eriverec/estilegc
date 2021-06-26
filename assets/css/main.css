@@ -323,6 +323,7 @@ span.like-icon {
   display: inline-block;
   color: hsla(0, 0%, 100%, 0.7);
   letter-spacing: 1px;
+  vertical-align: -webkit-baseline-middle;
 }
 
 .outer-container.main img {

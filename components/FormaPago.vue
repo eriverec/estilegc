@@ -5,7 +5,7 @@
     </b-button>
 
     <b-modal
-    centered 
+      centered
       hide-footer
       id="pago"
       title="Forma de Pago"
@@ -18,14 +18,9 @@
         <br />
 
         <strong>Transferencias y Deposito</strong><br />
-        Su producto será entregado cuando la transferencia se haga efectivo, máximo
-        de 72 horas. Escribenos para más información al
-        <a
-          href="https://wa.link/nvanws" target="_blank"
-          class="btn btn-light mb-2"
-        >
-          <img src="~/static/whatsapp.png" alt="" width="25" /> +593 962 704 731 </a
-        ><br />
+        Su producto será entregado cuando la transferencia se haga efectivo,
+        máximo de 72 horas.
+        <br />
         <br />
 
         <strong>Payphone</strong><br />
