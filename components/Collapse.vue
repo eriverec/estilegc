@@ -40,7 +40,7 @@
       <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-card-text>
-            <nuxt-link to="/falda">
+            <nuxt-link to="/">
               <b-icon-circle-fill
                 font-scale="0.5"
                 animation="fade"
@@ -61,7 +61,7 @@
       <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-card-text>
-            <nuxt-link to="/">
+            <nuxt-link to="/skin-care/the-ordinary">
               <b-icon-circle-fill
                 font-scale="0.5"
                 animation="fade"
