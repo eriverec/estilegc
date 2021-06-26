@@ -19,6 +19,10 @@ export default function (doc) {
     return '/falda/' + doc.uid
   }
 
+  if (doc.type === 'post_skin_care') {
+    return '/skin-care/the-ordinary/' + doc.uid
+  }
+
  
   return '/not-found'
 }

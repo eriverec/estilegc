@@ -11,6 +11,9 @@
           sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
         />
 
+         <h2 class="listing-badge-home now-open-home">
+         {{ section.data.nivel }}
+      </h2> 
         <div class="style_title__1jQC3">
           {{ $prismic.asText(section.data.title) }}
         </div>

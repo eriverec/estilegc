@@ -3,12 +3,9 @@
     <b-sidebar id="sidebar-right" title="Menu" backdrop shadow right>
       <template #footer>
         <div class=" text-dark align-items-center px-3 py-2">
-          <a
-            href="https://wa.link/3lba4v"
-            class="btn btn-light mb-2"
-          >
-            <img src="~/static/whatsapp.png" alt="" width="25" /> +593 978 775
-            201
+          <a href="https://wa.link/nvanws" class="btn btn-light mb-2">
+            <img src="~/static/whatsapp.png" alt="" width="25" /> +593 962 704
+            731
           </a>
           <a
             target="blank"
@@ -22,11 +19,8 @@
       </template>
       <div class="px-3 py-2">
         <SearchForm />
-        <Collapse/>
-    
+        <Collapse />
       </div>
     </b-sidebar>
   </div>
 </template>
-
-

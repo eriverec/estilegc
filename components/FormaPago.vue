@@ -18,13 +18,13 @@
         <br />
 
         <strong>Transferencias y Deposito</strong><br />
-        Su producto será entregado cuando la transferencia se haga en efectivo, máximo
+        Su producto será entregado cuando la transferencia se haga efectivo, máximo
         de 72 horas. Escribenos para más información al
         <a
-          href="https://wa.link/3lba4v" target="_blank"
+          href="https://wa.link/nvanws" target="_blank"
           class="btn btn-light mb-2"
         >
-          <img src="~/static/whatsapp.png" alt="" width="25" /> +593 978 775 201 </a
+          <img src="~/static/whatsapp.png" alt="" width="25" /> +593 962 704 731 </a
         ><br />
         <br />
 

@@ -13,7 +13,7 @@
     </b-button>
 
     <b-modal
-    centered 
+      centered
       hide-footer
       id="modal-1"
       title="Contáctanos"
@@ -22,12 +22,15 @@
     >
       <p class="my-4">
         Gracias por visitar Ragazza Stile. <br /><br />
-        Para consultas de servicio al cliente, envíenos un correo electrónico a <strong><a href="mailto:name@email.com">ragazzastile@gmail.com</a></strong> 
+        Para consultas de servicio al cliente, envíenos un correo electrónico a
+        <strong
+          ><a href="mailto:name@email.com">ragazzastile@gmail.com</a></strong
+        >
       </p>
     </b-modal>
 
     <b-modal
-    centered 
+      centered
       hide-footer
       id="envio"
       title="Envío"
@@ -35,8 +38,8 @@
       :header-text-variant="headerTextVariant"
     >
       <p class="my-4">
-        El tiempo normal de procesamiento de pedidos es de 72 horas durante los
-        días hábiles (de lunes a viernes).
+        El tiempo normal de tramitación de pedidos es máximo hasta 72 horas
+        durante los días hábiles (Lunes a Sábado).
       </p>
     </b-modal>
   </div>
@@ -60,8 +63,6 @@
 .btn-outline-secondary {
   color: initial;
 }
-
-
 </style>
 
 <script>
