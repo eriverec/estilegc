@@ -74,10 +74,10 @@ export default {
       // Query for keyword
       const searchresult = await $prismic.api.query(
         [
-          $prismic.predicates.any("document.type", ["falda", "post_falda"]),
+          $prismic.predicates.any("document.type", ["post_skin_care", "post_falda"]),
           $prismic.predicates.fulltext("document", query.search)
         ],
-        { orderings: "[my.falda.date desc]", pageSize: 1 } //custom pageSize: 9
+        { orderings: "[my.post_skin_care.date desc]", pageSize: 1 } //custom pageSize: 9
       );
 
       // Returns data to be used in template
@@ -96,7 +96,7 @@ export default {
         // Query other page for search
         const searchresult = await this.$prismic.api.query(
           [
-            this.$prismic.predicates.any('document.type', ["falda", "post_falda"]),
+            this.$prismic.predicates.any('document.type', ["post_skin_care", "post_falda"]),
             this.$prismic.predicates.fulltext('document', this.searchterm)
           ],
           {
