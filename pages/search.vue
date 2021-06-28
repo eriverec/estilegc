@@ -77,7 +77,7 @@ export default {
           $prismic.predicates.any("document.type", ["post_skin_care", "post_falda"]),
           $prismic.predicates.fulltext("document", query.search)
         ],
-        { orderings: "[my.post_skin_care.date desc]", pageSize: 1 } //custom pageSize: 9
+        { orderings: "[my.post_skin_care.date desc]", pageSize: 6 } //custom pageSize: 9
       );
 
       // Returns data to be used in template
@@ -87,7 +87,7 @@ export default {
       };
     } catch (e) {
       // Returns error page
-      error({ statusCode: 404, message: "Page not found 2" });
+      error({ statusCode: 404, message: "Page not found" });
     }
   },
   methods: {
@@ -101,7 +101,7 @@ export default {
           ],
           {
             orderings: '[document.first_publication_date desc]',
-            pageSize: 1,  //custom pageSize: 9
+            pageSize: 6,  //custom pageSize: 9
             page: this.currentpage + 1 //original
           }
         )
