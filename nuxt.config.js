@@ -15,7 +15,11 @@ export default {
         hid: "description",
         name: "description",
         content: "Has tus compras aquí"
-      }
+      },
+      {
+        name: 'google-site-verification',
+        content: '0-e9NSNjEXcjZOpIuFrw5nDPQU4i9-WAATcsBmEkkMQ'
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
