@@ -23,6 +23,10 @@ export default function (doc) {
     return '/skin-care/the-ordinary/' + doc.uid
   }
 
+  if (doc.type === 'post_top') {
+    return '/mujer/top/' + doc.uid
+  }
+
  
   return '/not-found'
 }

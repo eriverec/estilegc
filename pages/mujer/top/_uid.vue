@@ -85,19 +85,19 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try {
       // Query to get post content
-      const post_skin_care = (
-        await $prismic.api.getByUID("post_skin_care", params.uid)
+      const post_top = (
+        await $prismic.api.getByUID("post_top", params.uid)
       ).data;
 
       // Returns data to be used in template
       return {
-        document: post_skin_care,
-        slices: post_skin_care.body,
+        document: post_top,
+        slices: post_top.body,
         formattedDate: Intl.DateTimeFormat("en-US", {
           year: "numeric",
           month: "short",
           day: "2-digit"
-        }).format(new Date(post_skin_care.date))
+        }).format(new Date(post_top.date))
       };
     } catch (e) {
       // Returns error page

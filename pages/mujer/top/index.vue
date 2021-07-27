@@ -6,15 +6,15 @@
         <section>
           <b-row class="imagen__section">
             <b-col
-              v-for="post_skin_care in post_skin_cares"
-              :key="post_skin_care.id"
-              v-bind:post="post_skin_care"
+              v-for="post_top in post_tops"
+              :key="post_top.id"
+              v-bind:post="post_top"
               cols="12"
               md="6"
               lg="4"
               sm="12"
             >
-              <the-ordinary-widget :post_skin_care="post_skin_care"></the-ordinary-widget>
+              <post-top-widget :post_top="post_top"></post-top-widget>
             </b-col>
           </b-row>
         </section>
@@ -26,17 +26,17 @@
 <script>
 
 import SlicesBlock from "~/components//SlicesBlock.vue";
-const TheOrdinaryWidget = () => import("~/components/skin-care/TheOrdinaryWidget.vue");
+const PostTopWidget = () => import("~/components/top/PostTopWidget.vue");
 
 
 export default {
   components: {
-    TheOrdinaryWidget,
+    PostTopWidget,SlicesBlock
     
   },
   data() {
     return {
-      title: "Falda"
+      title: "Top"
     };
   },
 
@@ -48,14 +48,14 @@ export default {
   async asyncData({ $prismic, error }) {
     try {
       // Query to get posts content to preview
-      const PostscPosts = await $prismic.api.query(
-        $prismic.predicates.at("document.type", "post_skin_care"),
-        { orderings: "[my.post_skin_care.date desc]" }
+      const PostsTop = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "post_top"),
+        { orderings: "[my.post_top.date desc]" }
       );
 
       // Returns data to be used in template
       return {
-        post_skin_cares: PostscPosts.results
+        post_tops: PostsTop.results
       };
     } catch (e) {
       // Returns error page

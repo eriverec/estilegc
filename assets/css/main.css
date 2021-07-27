@@ -309,6 +309,7 @@ span.like-icon {
   font-weight: 500;
   margin: 0;
   line-height: 31px;
+  text-transform: uppercase;
 }
 .listing-item-content span {
   font-size: 16px;
