@@ -311,6 +311,10 @@ span.like-icon {
   line-height: 31px;
   text-transform: uppercase;
 }
+.outer-container .blog-title {
+  text-transform: uppercase;
+}
+
 .listing-item-content span {
   font-size: 16px;
   font-weight: 300;
