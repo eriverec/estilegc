@@ -9,6 +9,8 @@
       />
       <!-- Template for page title -->
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h3>
+      
+      
 
       <b-row class="w-340 m-auto">
         <b-col
@@ -42,6 +44,10 @@
             </a></div
         ></b-col>
       </b-row>
+
+      <p class="texto">{{ document.texto }}</p>
+      <h3 class="blog-title mt-3">{{ $prismic.asText(document.texto) }}</h3>
+
     </div>
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices" />
