@@ -47,6 +47,7 @@
 
       <p class="texto">{{ document.texto }}</p>
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.texto) }}</h3>
+       <prismic-rich-text :field="document.texto"/>
 
     </div>
     <!-- Slice Block Componenet tag -->
