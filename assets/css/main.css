@@ -331,7 +331,7 @@ span.like-icon {
   vertical-align: -webkit-baseline-middle;
 }
 
-.outer-container.main img {
+.outer-container.main .img-principal {
   width: 400px;
   display: block;
   margin: auto;
@@ -411,6 +411,7 @@ span.like-icon {
 .slider-custom{
   width: 90%;
   margin: auto;
+  margin-top: 25px;
 }
 
 /*slider para las UID - fin*/
@@ -425,7 +426,7 @@ span.like-icon {
 }
 
 @media (max-width: 600px) {
-  .outer-container.main img {
+  .outer-container.main .img-principal {
     width: 100%;
   }
 

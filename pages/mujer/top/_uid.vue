@@ -3,14 +3,17 @@
     <div class="outer-container main animate__animated animate__fadeIn">
       <Back />
       <prismic-image
+      class="img-principal"
         v-if="document && document.image"
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
       />
+
+      <div class="img-slider">
+        <slices-block :slices="slices" />
+      </div>
       <!-- Template for page title -->
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h3>
-      
-      
 
       <b-row class="w-340 m-auto">
         <b-col
@@ -37,7 +40,6 @@
                   ' '
               "
               target="_blank"
-              
               class="btn btn-light mb-2"
             >
               <img class="img-ws" src="~/static/whatsapp2.png" alt="ws" />
@@ -45,15 +47,12 @@
         ></b-col>
       </b-row>
 
-      <p class="texto">{{ document.texto }}</p>
-      <h3 class="blog-title mt-3">{{ $prismic.asText(document.texto) }}</h3>
-       <prismic-rich-text :field="document.texto"/>
-
+       <prismic-rich-text :field="document.texto" />
     </div>
     <!-- Slice Block Componenet tag -->
-    <slices-block :slices="slices" />
+    
     <!-- <a class="flotante" href='https://payp.page.link/HYK2' ><img src="~/static/logo-PP.png" alt=""></a> -->
-
+    
     <div class="outer-container pago">
       <FormaPago />
     </div>
@@ -64,7 +63,7 @@
 .outer-container.main .img-ws {
   width: 25px !important;
 }
-.w-340{
+.w-340 {
   width: 340px;
 }
 
@@ -74,7 +73,6 @@
     text-align: center;
   }
 }
-
 </style>
 
 <script>
@@ -103,9 +101,8 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try {
       // Query to get post content
-      const post_top = (
-        await $prismic.api.getByUID("post_top", params.uid)
-      ).data;
+      const post_top = (await $prismic.api.getByUID("post_top", params.uid))
+        .data;
 
       // Returns data to be used in template
       return {
