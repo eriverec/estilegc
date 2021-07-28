@@ -15,7 +15,7 @@
       <!-- Template for page title -->
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h3>
 
-      <b-row class="w-340 m-auto">
+      <b-row class="w-340">
         <b-col
           ><p class="blog-post-meta text-dark">
             $ <span class="created-at ">{{ document.precio }}</span>

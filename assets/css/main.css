@@ -419,6 +419,10 @@ span.like-icon {
   margin: auto;
 }
 
+p {
+  margin-bottom: 0px !important;
+}
+
 /*slider para las UID - fin*/
 
 @media (min-width: 992px) {
