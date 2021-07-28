@@ -406,6 +406,18 @@ span.like-icon {
   margin-bottom: 25px;
 }
 
+
+/*slider para las UID - inicio*/
+.slider-custom{
+  width: 90%;
+  margin: auto;
+}
+
+/*slider para las UID - fin*/
+
+
+
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     justify-content: space-between !important;
