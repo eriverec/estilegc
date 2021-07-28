@@ -1,27 +1,34 @@
 <template>
-  <section>
-    <VueSlickCarousel v-bind="playeraOptions" :arrows="true" class="slider-custom">
-      <section v-for="(slice, index) in slices" :key="index">
-        <template v-if="slice.slice_type === 'image_with_caption'">
-          <image-caption-slice :slice="slice"></image-caption-slice>
+  <div>
+    <section>
+      <VueSlickCarousel
+        v-bind="playeraOptions"
+        :arrows="true"
+        class="slider-custom"
+      >
+        <section v-for="(slice, index) in slices" :key="index">
+          <template v-if="slice.slice_type === 'image_with_caption'">
+            <image-caption-slice :slice="slice"></image-caption-slice>
+          </template>
+        </section>
+      </VueSlickCarousel>
+    </section>
+    <section>
+      <section v-for="(slice, index_text) in slices" :key="index_text">
+        <!-- Text slice template -->
+        <template v-if="slice.slice_type === 'text'">
+          <!-- Here :slice="slice" passes the data to the component -->
+          <text-slice :slice="slice"></text-slice>
         </template>
       </section>
-    </VueSlickCarousel>
-
-    <section v-for="(slice, index) in slices" :key="'slice-' + index">
-      <!-- Text slice template -->
-      <template v-if="slice.slice_type === 'text'">
-        <!-- Here :slice="slice" passes the data to the component -->
-        <text-slice :slice="slice"></text-slice>
-      </template>
+      <section v-for="(slice, index_quo) in slices" :key="index_quo">
+        <!-- Text slice template -->
+        <template v-if="slice.slice_type === 'quote'">
+          <quote-slice :slice="slice"></quote-slice>
+        </template>
+      </section>
     </section>
-    <section v-for="(slice, index) in slices" :key="'slice-' + index">
-      <!-- Text slice template -->
-      <template v-if="slice.slice_type === 'quote'">
-        <quote-slice :slice="slice"></quote-slice>
-      </template>
-    </section>
-  </section>
+  </div>
 </template>
 
 <script>
