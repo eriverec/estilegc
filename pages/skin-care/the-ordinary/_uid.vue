@@ -3,6 +3,7 @@
     <div class="outer-container main animate__animated animate__fadeIn">
       <Back />
       <prismic-image
+        class="img-principal"
         v-if="document && document.image"
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"

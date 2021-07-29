@@ -32,10 +32,14 @@ export default {
         href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
       },
     ],
-    script: [{
-      src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',
-      async: true
-    }],
+    script: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',
+        async: true
+      },
+    
+
+    ],
   },
 
 
@@ -66,10 +70,6 @@ export default {
     { src: "~/plugins/prismicLinks", ssr: false },
     { src: "~/plugins/vue-slick-carousel" },
     { src: "~/plugins/vue-backtotop", ssr: false },
-
-
-
-
   ],
 
   /*

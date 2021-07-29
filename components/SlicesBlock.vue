@@ -2,11 +2,11 @@
   <div>
     <section>
       <VueSlickCarousel
-        v-bind="playeraOptions"
+        v-bind="sliderUidOptions"
         :arrows="true"
         class="slider-custom"
       >
-        <section v-for="(slice, index) in slices" :key="index">
+        <section v-for="(slice, index) in slices" :key="'slider-'+index">
           <template v-if="slice.slice_type === 'image_with_caption'">
             <image-caption-slice :slice="slice"></image-caption-slice>
           </template>
@@ -14,14 +14,14 @@
       </VueSlickCarousel>
     </section>
     <section>
-      <section v-for="(slice, index_text) in slices" :key="index_text">
+      <section v-for="(slice, index) in slices" :key="'sliderT-'+index">
         <!-- Text slice template -->
         <template v-if="slice.slice_type === 'text'">
           <!-- Here :slice="slice" passes the data to the component -->
           <text-slice :slice="slice"></text-slice>
         </template>
       </section>
-      <section v-for="(slice, index_quo) in slices" :key="index_quo">
+      <section v-for="(slice, index) in slices" :key="'sliderQ-'+index">
         <!-- Text slice template -->
         <template v-if="slice.slice_type === 'quote'">
           <quote-slice :slice="slice"></quote-slice>
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       title: "Home",
-      playeraOptions: {
+      sliderUidOptions: {
         dots: false,
         dotsClass: "slick-dots custom-dot-class",
         edgeFriction: 0.35,

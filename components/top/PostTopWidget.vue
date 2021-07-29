@@ -3,6 +3,7 @@
   <nuxt-link :to="link" class="listing-item-container compact">
     <div class="listing-item">
       <prismic-image
+      class="lazy"
         v-if="post_top.data && post_top.data.image"
         :field="post_top.data.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"

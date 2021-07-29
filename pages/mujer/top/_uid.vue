@@ -3,7 +3,7 @@
     <div class="outer-container main animate__animated animate__fadeIn">
       <Back />
       <prismic-image
-      class="img-principal"
+        class="img-principal"
         v-if="document && document.image"
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
@@ -47,15 +47,15 @@
         ></b-col>
       </b-row>
 
-       <prismic-rich-text :field="document.texto" />
+      <prismic-rich-text :field="document.texto" class="mt-4" />
+
+      <div class="mt-4 pago">
+        <FormaPago />
+      </div>
     </div>
     <!-- Slice Block Componenet tag -->
-    
+
     <!-- <a class="flotante" href='https://payp.page.link/HYK2' ><img src="~/static/logo-PP.png" alt=""></a> -->
-    
-    <div class="outer-container pago">
-      <FormaPago />
-    </div>
   </div>
 </template>
 
@@ -81,7 +81,7 @@ import SlicesBlock from "~/components/SlicesBlock.vue";
 import Back from "~/components/Back.vue";
 
 export default {
-  name: "falda",
+  name: "Top",
   components: {
     SlicesBlock,
     Back
