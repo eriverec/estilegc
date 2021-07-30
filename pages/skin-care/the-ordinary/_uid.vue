@@ -8,6 +8,10 @@
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
       />
+
+      <div class="img-slider">
+        <slices-block :slices="slices" />
+      </div>
       <!-- Template for page title -->
       <h3 class="blog-title mt-3">{{ $prismic.asText(document.title) }}</h3>
 
@@ -36,20 +40,16 @@
                   ' '
               "
               target="_blank"
-              
               class="btn btn-light mb-2"
             >
               <img class="img-ws" src="~/static/whatsapp2.png" alt="ws" />
             </a></div
         ></b-col>
       </b-row>
-    </div>
-    <!-- Slice Block Componenet tag -->
-    <slices-block :slices="slices" />
-    <!-- <a class="flotante" href='https://payp.page.link/HYK2' ><img src="~/static/logo-PP.png" alt=""></a> -->
-
-    <div class="outer-container pago">
-      <FormaPago />
+      <prismic-rich-text :field="document.texto" class="mt-4" />
+      <div class=" pago">
+        <FormaPago />
+      </div>
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@
 .outer-container.main .img-ws {
   width: 25px !important;
 }
-.w-340{
+.w-340 {
   width: 340px;
 }
 
@@ -68,7 +68,6 @@
     text-align: center;
   }
 }
-
 </style>
 
 <script>
