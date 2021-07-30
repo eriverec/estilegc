@@ -47,7 +47,7 @@
         ></b-col>
       </b-row>
       <prismic-rich-text :field="document.texto" class="mt-4" />
-      <div class=" pago">
+      <div class="mt-4 pago">
         <FormaPago />
       </div>
     </div>
