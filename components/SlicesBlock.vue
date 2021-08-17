@@ -6,7 +6,7 @@
         :arrows="true"
         class="slider-custom"
       >
-        <section v-for="(slice, index) in slices" :key="'slider-'+index">
+        <section v-for="(slice, index) in slices" :key="'slider-' + index">
           <template v-if="slice.slice_type === 'image_with_caption'">
             <image-caption-slice :slice="slice"></image-caption-slice>
           </template>
@@ -14,14 +14,14 @@
       </VueSlickCarousel>
     </section>
     <section>
-      <section v-for="(slice, index) in slices" :key="'sliderT-'+index">
+      <section v-for="(slice, index) in slices" :key="'sliderT-' + index">
         <!-- Text slice template -->
         <template v-if="slice.slice_type === 'text'">
           <!-- Here :slice="slice" passes the data to the component -->
           <text-slice :slice="slice"></text-slice>
         </template>
       </section>
-      <section v-for="(slice, index) in slices" :key="'sliderQ-'+index">
+      <section v-for="(slice, index) in slices" :key="'sliderQ-' + index">
         <!-- Text slice template -->
         <template v-if="slice.slice_type === 'quote'">
           <quote-slice :slice="slice"></quote-slice>
@@ -43,13 +43,14 @@ export default {
     return {
       title: "Home",
       sliderUidOptions: {
-        dots: false,
+        dots: true,
         dotsClass: "slick-dots custom-dot-class",
         edgeFriction: 0.35,
         infinite: false,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        arrows: false,
         responsive: [
           {
             breakpoint: 1024,
@@ -57,7 +58,8 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 1,
               infinite: false,
-              dots: false
+              dots: true,
+              arrows: false
             }
           },
           {
@@ -65,14 +67,18 @@ export default {
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              initialSlide: 1
+              initialSlide: 1,
+              dots: true,
+              arrows: false
             }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              dots: true,
+              arrows: false
             }
           }
         ]

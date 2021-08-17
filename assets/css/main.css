@@ -98,6 +98,8 @@
   background-position-x: center;
 }
 
+
+
 .style_root__3iCRH.bi__imagen {
   background-image: url("~/static/sec-bi.jpeg");
   background-position: center;
@@ -356,7 +358,7 @@ span.like-icon {
 }
 
 .slick-dots {
-  margin-top: -15px !important;
+  /* margin-top: -15px !important; */
   position: initial !important;
 }
 

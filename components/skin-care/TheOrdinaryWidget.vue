@@ -1,34 +1,31 @@
 <template>
-
   <nuxt-link :to="link" class="listing-item-container compact">
-    <div class="listing-item">
+    <div class="listing-item ">
       <prismic-image
         v-if="post_skin_care.data && post_skin_care.data.image"
         :field="post_skin_care.data.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
       />
 
-       <!-- <h2 class="listing-badge now-open">
+      <!-- <h2 class="listing-badge now-open">
         ${{ post_skin_care.data.precio }}
       </h2> -->
       <div class="listing-item-content">
-        <div v-if="(post_skin_care.data.stock) === 'Disponible'">
-          <b-badge variant="success" >
+        <div v-if="post_skin_care.data.stock === 'Disponible'">
+          <b-badge variant="success">
             {{ post_skin_care.data.stock }}
           </b-badge>
           <b-badge variant="light" class="text-dark">
             ${{ post_skin_care.data.precio }}
           </b-badge>
         </div>
-        <div  v-else>
-          
-        <b-badge variant="danger">
-          {{ post_skin_care.data.stock }}
-        </b-badge>
-        <b-badge variant="light" class="text-dark">
+        <div v-else>
+          <b-badge variant="danger">
+            {{ post_skin_care.data.stock }}
+          </b-badge>
+          <b-badge variant="light" class="text-dark">
             ${{ post_skin_care.data.precio }}
-        </b-badge>
-
+          </b-badge>
         </div>
         <h3>{{ $prismic.asText(post_skin_care.data.title) }}</h3>
         <!-- <span class="created-at">{{ formattedDate }}</span> -->
