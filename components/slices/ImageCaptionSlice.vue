@@ -1,7 +1,10 @@
 <template>
   <div>
     <template v-if="size === 'image-full-width'">
-      <div class='blog-header single' :style="{ 'background-image': 'url(' + img.url + ')'}">
+      <div
+        class="blog-header single"
+        :style="{ 'background-image': 'url(' + img.url + ')' }"
+      >
         <template v-if="$prismic.asText(caption) != ''">
           <div class="wrapper">
             <h1>{{ $prismic.asText(caption) }}</h1>
@@ -10,10 +13,11 @@
       </div>
     </template>
     <template v-else>
-      <div class='post-part single container'>
+      <div class="post-part single container">
         <p class="block-img" :class="size">
-          <prismic-image :field="img"/>
+          <prismic-image :field="img" />
         </p>
+        <div></div>
         <template v-if="$prismic.asText(caption) != ''">
           <p>
             <span class="image-label">{{ $prismic.asText(caption) }}</span>
@@ -21,26 +25,38 @@
         </template>
       </div>
     </template>
+      <!-- MODAL -->
+      <b-modal id="modal-35" hide-footer hide-header size="xl">
+        <prismic-image :field="img" />
+      </b-modal>
+      <!-- MODAL -->
   </div>
 </template>
 
 <script>
 export default {
-  props: ['slice'],
-  name: 'image-caption-slice',
+  props: ["slice"],
+  name: "image-caption-slice",
   data: function() {
     return {
-      img: '',
-      caption: '',
-      size: '',
+      img: "",
+      caption: "",
+      size: ""
+    };
+  },
+  created() {
+    this.img = this.slice.primary.image;
+    this.caption = this.slice.primary.caption;
+    this.size = this.slice.slice_label;
+  },
+  methods: {
+    showModal() {
+      //this.img = slice;
+      this.img = this.slice.primary.image;
+      this.$root.$emit("bv::show::modal", "modal-35");
     }
   },
-  created () {
-    this.img = this.slice.primary.image
-    this.caption = this.slice.primary.caption
-    this.size = this.slice.slice_label
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>

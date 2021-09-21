@@ -2,12 +2,13 @@
   <div>
     <b-form action="/search">
       <b-input-group class="">
- 
         <b-form-input
           placeholder="Buscar..."
           type="search"
+          
           name="search"
           id="search"
+          ref="search"
           v-model="searchinput"
         >
         </b-form-input>
@@ -23,6 +24,10 @@ export default {
     return {
       searchinput: null
     };
+  },
+  mounted() {
+    // set the focus when the component opened
+    this.$refs.search.focus();
   },
   props: {
     currentinput: {

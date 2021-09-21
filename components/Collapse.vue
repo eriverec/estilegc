@@ -31,7 +31,7 @@
       </b-collapse>
     </b-card>
 
-    <b-card no-body class="mb-1">
+    <!-- <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
         <b-button class="text-left" block v-b-toggle.accordion-2 variant="light"
           >Fragancias</b-button
@@ -50,7 +50,7 @@
           </b-card-text>
         </b-card-body>
       </b-collapse>
-    </b-card>
+    </b-card> -->
 
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">

@@ -5,6 +5,10 @@
   color: #333 !important;
 }
 
+.modal-body img{
+  width: 100%;
+}
+
 .style_wrapper__1BeS5 {
   max-width: var(--page-width-with-margin);
 

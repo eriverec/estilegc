@@ -3,11 +3,23 @@
     <div class="outer-container main animate__animated animate__fadeIn">
       <Back />
       <prismic-image
+        v-b-modal.modal-34
         class="img-principal"
         v-if="document && document.image"
         :field="document.image"
         sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
       />
+
+      <div>
+        <b-modal id="modal-34" hide-footer hide-header size="xl">
+          <prismic-image
+            class="img-principal"
+            v-if="document && document.image"
+            :field="document.image"
+            sizes="(max-width: 990px) 100vw (min-width: 991px) 57vw"
+          />
+        </b-modal>
+      </div>
 
       <div class="img-slider">
         <slices-block :slices="slices" />

@@ -1,38 +1,58 @@
 <template>
-  <section>
-    <div class="outer-container animate__animated animate__fadeIn ">
-      <Back />
-      <article>
-        <section>
-          <b-row class="imagen__section">
-            <b-col
-              v-for="post_skin_care in post_skin_cares"
-              :key="post_skin_care.id"
-              v-bind:post="post_skin_care"
-              cols="12"
-              md="6"
-              lg="4"
-              sm="12"
-            >
-              <the-ordinary-widget :post_skin_care="post_skin_care"></the-ordinary-widget>
-            </b-col>
-          </b-row>
-        </section>
-      </article>
-    </div>
-  </section>
+  <div>
+
+    <section>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9134606564395507"
+      crossorigin="anonymous"
+    ></script>
+    <!-- full-banner -->
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-9134606564395507"
+      data-ad-slot="1758304887"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+      <div class="outer-container animate__animated animate__fadeIn ">
+        <Back />
+        <article>
+          <section>
+            <b-row class="imagen__section">
+              <b-col
+                v-for="post_skin_care in post_skin_cares"
+                :key="post_skin_care.id"
+                v-bind:post="post_skin_care"
+                cols="12"
+                md="6"
+                lg="4"
+                sm="12"
+              >
+                <the-ordinary-widget
+                  :post_skin_care="post_skin_care"
+                ></the-ordinary-widget>
+              </b-col>
+            </b-row>
+          </section>
+        </article>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-
 import SlicesBlock from "~/components//SlicesBlock.vue";
-const TheOrdinaryWidget = () => import("~/components/skin-care/TheOrdinaryWidget.vue");
-
+const TheOrdinaryWidget = () =>
+  import("~/components/skin-care/TheOrdinaryWidget.vue");
 
 export default {
   components: {
-    TheOrdinaryWidget,
-    
+    TheOrdinaryWidget
   },
   data() {
     return {

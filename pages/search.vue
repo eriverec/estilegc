@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="outer-container animate__animated animate__fadeIn ">
-      <Back/>
+      <Back />
       <div class="mb-3">
         <strong>Resultados para:</strong>
         {{ searchterm }}
@@ -22,24 +22,24 @@
               <GridPost :falda="falda" />
             </b-col>
           </b-row>
-          <div v-else class="text-xl font-semibold">Lo siento, no hay resultado</div>
-        </section>
-
-        <div class="text-center loadmore">
-          <b-button
-           variant="outline-primary"
-            @click="loadMoreResults()"
-            v-if="result.length % 1 === 0 && !nonewposts"
-          >
-            Cargar más resultados
-          </b-button>
-          <div
-            v-else
-            variant="outline-primary"
-          >
-            ¡No hay más productos!
+          <div v-else class="text-xl font-semibold">
+            Lo siento, no hay resultado
           </div>
-        </div>
+          <div v-if="result.length > 0">
+            <div class="text-center loadmore">
+              <b-button
+                variant="outline-primary"
+                @click="loadMoreResults()"
+                v-if="result.length % 1 === 0 && !nonewposts"
+              >
+                Cargar más resultados
+              </b-button>
+              <div v-else variant="outline-primary">
+                ¡No hay más productos!
+              </div>
+            </div>
+          </div>
+        </section>
       </article>
     </div>
   </section>
@@ -55,18 +55,18 @@ export default {
     GridPost,
     SearchForm
   },
-  head(){
-    return{
+  head() {
+    return {
       title: this.title
-    }
+    };
   },
 
-   data() {
+  data() {
     return {
-      title:"Búsqueda",
+      title: "Búsqueda",
       currentpage: 1, //original
       nonewposts: false
-    }
+    };
   },
 
   async asyncData({ $prismic, error, query }) {
@@ -74,7 +74,10 @@ export default {
       // Query for keyword
       const searchresult = await $prismic.api.query(
         [
-          $prismic.predicates.any("document.type", ["post_skin_care", "post_falda"]),
+          $prismic.predicates.any("document.type", [
+            "post_skin_care",
+            "post_top"
+          ]),
           $prismic.predicates.fulltext("document", query.search)
         ],
         { orderings: "[my.post_skin_care.date desc]", pageSize: 6 } //custom pageSize: 9
@@ -96,26 +99,29 @@ export default {
         // Query other page for search
         const searchresult = await this.$prismic.api.query(
           [
-            this.$prismic.predicates.any('document.type', ["post_skin_care", "post_falda"]),
-            this.$prismic.predicates.fulltext('document', this.searchterm)
+            this.$prismic.predicates.any("document.type", [
+              "post_skin_care",
+              "post_top"
+            ]),
+            this.$prismic.predicates.fulltext("document", this.searchterm)
           ],
           {
-            orderings: '[document.first_publication_date desc]',
-            pageSize: 6,  //custom pageSize: 9
+            orderings: "[document.first_publication_date desc]",
+            pageSize: 6, //custom pageSize: 9
             page: this.currentpage + 1 //original
           }
-        )
+        );
         if (searchresult.results.length > 0) {
           // Merge with the other posts
-          this.result = this.result.concat(searchresult.results)
+          this.result = this.result.concat(searchresult.results);
         } else {
           // No more new posts
-          this.nonewposts = true
+          this.nonewposts = true;
         }
         // Save current page
-        this.currentpage++
+        this.currentpage++;
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     }
   }

@@ -37,6 +37,10 @@ export default {
         src: 'https://www.googletagmanager.com/gtag/js?id=UA-195306092-1',
         async: true
       },
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9134606564395507',
+        async: true
+      },
       
 
 

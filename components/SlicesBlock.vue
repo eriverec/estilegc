@@ -6,11 +6,15 @@
         :arrows="true"
         class="slider-custom"
       >
-        <section v-for="(slice, index) in slices" :key="'slider-' + index">
+        <section v-for="(slice, index) in slices" :key="'slider-' + index" class="sii">
           <template v-if="slice.slice_type === 'image_with_caption'">
-            <image-caption-slice :slice="slice"></image-caption-slice>
+            <image-caption-slice
+              
+              :slice="slice"
+            ></image-caption-slice>
           </template>
         </section>
+        
       </VueSlickCarousel>
     </section>
     <section>
