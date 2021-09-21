@@ -1,24 +1,17 @@
 <template>
   <div>
-
     <section>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9134606564395507"
-      crossorigin="anonymous"
-    ></script>
-    <!-- full-banner -->
-    <ins
-      class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-9134606564395507"
-      data-ad-slot="1758304887"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+      
+      <!-- full-banner -->
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9134606564395507"
+        data-ad-slot="1758304887"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      
       <div class="outer-container animate__animated animate__fadeIn ">
         <Back />
         <article>
@@ -62,8 +55,19 @@ export default {
 
   head() {
     return {
-      title: this.title
-    };
+      title: this.title,
+      script: [
+          {
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9134606564395507',
+            async: true,
+            crossorigin: "anonymous"
+          },
+          {
+            src: '~/js/top'
+          }
+        ]
+    }
+
   },
   async asyncData({ $prismic, error }) {
     try {
