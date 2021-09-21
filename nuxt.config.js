@@ -76,7 +76,7 @@ export default {
     { src: "~/plugins/prismicLinks", ssr: false },
     { src: "~/plugins/vue-slick-carousel" },
     { src: "~/plugins/vue-backtotop", ssr: false },
-    { src: "~/plugins/top", ssr: false },
+    //{ src: "~/plugins/top", ssr: false },
 
     
 
