@@ -63,7 +63,7 @@ export default {
             crossorigin: "anonymous"
           },
           {
-            src: '~/js/top'
+            src: '~/js/top.js'
           }
         ]
     }
