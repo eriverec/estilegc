@@ -1,17 +1,6 @@
 <template>
   <div>
-    <section>
-      
-      <!-- full-banner -->
-      <!-- <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9134606564395507"
-        data-ad-slot="1758304887"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins> -->
-      
+    <section>      
       <div class="outer-container animate__animated animate__fadeIn ">
         <Back />
         <article>
@@ -56,14 +45,7 @@ export default {
   head() {
     return {
       title: this.title,
-     /* script: [
-          {
-            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9134606564395507',
-            async: true,
-            crossorigin: "anonymous"
-          }
-         
-        ]*/
+     
     }
 
   },
