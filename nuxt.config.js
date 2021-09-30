@@ -87,10 +87,26 @@ export default {
     ['bootstrap-vue/nuxt', {
       icons: true,
     }],
+    ['@nuxtjs/google-adsense'],
+    
     '@nuxtjs/google-analytics',
     'vue-social-sharing/nuxt',
     
   ],
+
+
+  'google-adsense': {
+    id: 'ca-pub-9134606564395507',
+    onPageLoad: false,
+    pageLevelAds: false,
+  },
+
+  publicRuntimeConfig: {
+    'google-adsense': {
+      id: process.env.GOOGLE_ADSENSE_ID,
+      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
+    },
+  },
 
   googleAnalytics: {
     id: 'UA-195306092-1'
