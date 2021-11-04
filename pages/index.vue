@@ -2,7 +2,7 @@
   <section class="home">
     <article>
       <Header />
-
+      <!-- hola gaby -->
       <!-- <div>
           <center><h2>ACCESORIOS</h2></center>
         </div>
@@ -66,8 +66,6 @@
           </VueSlickCarousel>
         </div> -->
     </article>
-
-  
   </section>
 </template>
 
